@@ -1,0 +1,22 @@
+@import '../../App.scss';
+
+.MyList{
+    background-color: var(--main-color);
+    overflow: hidden;
+    height: 1200px;
+    
+
+    .list{
+        margin-top: 250px;
+        margin-bottom: 25px;
+
+        h2{
+            color:aliceblue;
+            margin-top: 30px;
+            margin-bottom: 70px;
+            margin-left: 50px;
+           
+            
+        }
+    }
+}

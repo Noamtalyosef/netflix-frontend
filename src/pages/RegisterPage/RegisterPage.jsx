@@ -15,7 +15,7 @@ function RegisterPage () {
   const [passwordVisible, setPasswordvisible] = useState('password')
 
   const emailRef = useRef()
-  const passwordRef = useRef()
+  const passwordRef = useRef('1234')
 
   const navigate = useNavigate()
 
@@ -27,10 +27,13 @@ function RegisterPage () {
 
   async function handleFinish (e) {
     e.preventDefault()
+    console.log(passwordRef.current.value)
     setPassword(passwordRef.current.value)
+    console.log(password)
     const username = email.substring(0, email.indexOf('@')) // Taking a username before "@"
 
     try {
+      console.log(`email:${email} username:${username} password:${password} in handele finish`)
       await registerCall({ email, password, username }, dispatch)
     } catch (err) {
       console.log(err)

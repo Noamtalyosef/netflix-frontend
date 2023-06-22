@@ -11,6 +11,8 @@ export async function GetContent (_id, token) {
   }
 }
 
+
+
 export const genres = [
   'Action',
   'Comedy',

@@ -19,7 +19,7 @@ function Featured ({type}) {
             const response = await axios.get(path+pathtype,{headers:{"authorization": `Bearer ${user.token}`}})
            
             if(response){
-              console.log(response.data);
+              //console.log(response.data);
                 setRandomContent(response.data);
             }
         }catch(err){

@@ -23,10 +23,13 @@ function HomePage ({ type }) {
     async function GetRandomList () {
       dispatch({ type: 'GET_REQUEST' })
       try {
+
+        
         const results = await axios.get(`lists?type=${type ? type : ''}`, {
           //`/lists/${type ? '?type=' + type : ''}`
           headers: { authorization: `Bearer ${user.token}` }
         })
+        console.log('in the lists ')
         dispatch({
           type: 'GET_SUCCESS',
           payload: results.data.sort(
@@ -56,6 +59,7 @@ function HomePage ({ type }) {
       ) : error ? (
         <Error error={error}></Error>
       ) : (
+        
         lists.map((item, i) => <List className="list" key={i} list={item}></List>)
       )}
     </div>

@@ -42,7 +42,7 @@ function Navbar () {
           <Link to="/new-and-popular" className="link">
         <span>New and Popular</span>
       </Link> 
-           <Link to="/my-list" className="link">
+           <Link to="/MyList" className="link">
         <span>My List</span>
       </Link>
         </div>

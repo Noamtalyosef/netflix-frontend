@@ -6,9 +6,37 @@ import AddIcon from '@mui/icons-material/Add'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import './ListItem.scss'
+import axios from 'axios'
 
 function ListItem ({ item }) {
   const [isHovered, setIsHovered] = useState(false)
+ const [isAdded, setIAdedd] = useState(false)
+
+  const handeleAddClick = async ()=>{
+
+    try{
+     console.log("in handele click")
+     console.log(item._id)
+  
+    const user = localStorage.getItem("user")
+    const parsdeUser = JSON.parse(user);
+   
+      const result = await axios.post(`usersInfo?_itemId=${item._id }`,{
+      
+          userId : `${parsdeUser._id}`
+       
+      })
+     
+      console.log({result});
+    }
+    catch(err){
+
+       console.log("error handele click")
+    }
+
+  }
+
+
   return (
     <Link to={{ pathname: `/details/${item._id}` }} className='link'>
       <div
@@ -31,7 +59,7 @@ function ListItem ({ item }) {
                 
                   <Link to={`watch/${item._id}`}><PlayArrowIcon className='icon link' /></Link>
 
-                <AddIcon className='icon' />
+               <button  onClick={handeleAddClick}><AddIcon className='icon'/></button> 
                 <ThumbUpOutlinedIcon className='icon' />
                 <ThumbDownOffAltOutlinedIcon className='icon' />
               </div>

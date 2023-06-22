@@ -5,6 +5,7 @@ import "./List.scss"
 import ListItem from '../ListItem/ListItem'
 
 function List ({ list }) {
+  console.log(`lists in list : ${list}`)
   const responsive = {
     superLargeDesktop5: {
       breakpoint: { max: 4000, min: 2100 },
@@ -51,6 +52,7 @@ function List ({ list }) {
         draggable={false}
       >
         {list.contents.map((item, i) => (
+        
          <ListItem item={item} key={i}></ListItem>
 
         ))}
