@@ -8,7 +8,7 @@ import axios from 'axios'
 
 
 
-axios.defaults.baseURL = "https://netflixx-frontend.onrender.com/api";
+axios.defaults.baseURL = "https://netclonesever.onrender.com/api";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
