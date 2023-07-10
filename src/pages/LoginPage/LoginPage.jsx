@@ -51,6 +51,7 @@ function LoginPage() {
       <div className="container">
         <form>
           <h1>Sign In</h1>
+          <h5>this is demo log in with userName: noam@ password: 1234</h5>
           <input
             type="email"
             placeholder="Email or phone number"
